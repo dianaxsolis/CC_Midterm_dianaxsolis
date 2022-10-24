@@ -4,6 +4,7 @@ function setup() {
 }
 
 function draw() {
- 
+ time = 0
+ // just testing out variables and trying to see how github repo works
 
 }
