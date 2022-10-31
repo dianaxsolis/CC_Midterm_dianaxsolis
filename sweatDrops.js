@@ -28,7 +28,8 @@ class sweatDrops {
 
   // face structure
 
-  fill (248, 179, 143);
+  // fill (248, 179, 143);
+  fill (192,240,246);
   arc (700,0,700,1000,0,PI+QUARTER_PI,CHORD);
 
   // right eye structure

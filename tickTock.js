@@ -19,6 +19,10 @@ let sweat6;
 
 let sweat7;
 
+let heart;
+
+var option = 1;
+
 function setup() {
   createCanvas(1500,800);
   // background(255);
@@ -32,7 +36,8 @@ function setup() {
   sweat6 = new sweatDrops (955,50,5);
   
   sweat7 = new sweatDrops(650,20,15);
-  
+
+  heart = new heartBeat(500,500,2);
   
 }
 
@@ -40,25 +45,36 @@ function draw() {
           
   background(255);
   
-  sweat1.display();
-  sweat2.display();
-  sweat3.display();
-  
-  sweat4.display();
-  sweat5.display();
-  sweat6.display();
-  
-  sweat7.display();
-  
-  sweat1.move();
-  sweat2.move();
-  sweat3.move();
-  
-  sweat4.move();
-  sweat5.move();
-  sweat6.move();
-  
-  sweat7.move();
+  if (option == 1){
+    sweat1.display();
+    sweat2.display();
+    sweat3.display();
+    
+    sweat4.display();
+    sweat5.display();
+    sweat6.display();
+    
+    sweat7.display();
+    
+    sweat1.move();
+    sweat2.move();
+    sweat3.move();
+    
+    sweat4.move();
+    sweat5.move();
+    sweat6.move();
+    
+    sweat7.move();
+  }
+
+  if (option == 2){
+    push();
+    translate(width/2,height/2-500)
+    scale(random(1,1.05));
+    heart.display();
+    pop();
+
+  }
   
   
   
@@ -72,3 +88,11 @@ function draw() {
   */
 
 }
+
+function keyPressed(){
+  if (keyCode === RIGHT_ARROW){
+    option++;
+  } else if (keyCode === LEFT_ARROW){
+    option--;
+  }
+  }
