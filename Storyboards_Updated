@@ -1,0 +1,34 @@
+These notes/updated storyboards of the narrative were created and updated after midterm feedback. I decided to go ahead with a great suggestion by a fellow peer Eileen on 
+demonstrating each seperate body part, showing that fight or flight response. These notes are just to help me get direction with my project and be able to give myself
+solid tasks to work on, to ensure progression over the week before the final piece is due as well as reminding me of certain objectives.
+
+Notes created on 11/2/22:
+
+Tasks to complete:
+
+1. animate the sweatdrops to randomly move at different speeds, gradually increasing as the different scene progresses
+2. add more background to the heart scene, have it going at a slower speed at first
+3. create a scene that demonstrates a hand trembling
+4. from there, figure out how to transition out different scenes depending on time
+	- as time increases, each scene will come faster and it will go in between all three speeds very rapidly at the end
+5. figure out how to create a more gradual increase shaking of each object, demonstrating them getting more scared
+6. change the color of the face to go from blue to completely pale/white face by the end of the scene
+7. create a scene at the end to appear that gives off a very ominous feeling such as the petrifying factor the indivdual is seeing
+8. add comments !!!!!!! give explanation and clean up code !!!!!
+9. review the code and submit to openprocessing - continue updating github repo
+
+Storyboards in words:
+
+* first scene starts off - face is normal - eyes begin to look around and move from left to left
+* moves to heart beat going a little bit more than normal speed but not too noticable
+* goes to hand slowly shaking
+* transitions back to face starting to look a little bit more pale - eyes are bigger - face is trembling a little
+* heartbeat is starting to go a little faster now definitely more noticable 
+* hand is definitely trembling now, you can notice it shaking
+* do two quick transitions between all of this so it emphasizes
+* one final shot of the face - completely pale, eyes are huge, face is trembling 
+* heartbeat is going super fast
+* ends off with hand trembling so much 
+* go quick between those screens quickly and finish off with a rapid black screen.
+* sits for like 5 seconds at black and then a dark shadow of a figure appears 
+* scene loops over - done
