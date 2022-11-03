@@ -1,12 +1,17 @@
 class heartBeat {
+
+	//Variables
+
 	constructor (x,y,s){
 	this.x_ = x;
 	this.y_ = y;
 	this.speed = s
+
 	}
 
 	display(){
 
+	// heart drawing
 
 	stroke(0);
 	strokeWeight(2);
@@ -29,5 +34,7 @@ class heartBeat {
 	curveVertex(450, 800);
 	endShape();
 	}
+
+	// end of heart drawing
 
 }
