@@ -1,6 +1,6 @@
 class sweatDrops {
 
-  constructor(x,y,s){
+  constructor(x,y,s,position){
 
     // Variables
 
@@ -9,15 +9,13 @@ class sweatDrops {
 
     // Movement Variables
 
-    this.speed = s;
-    this.position = createVector(random(0,width), this.y_);
-    this.velocity = createVector(this.speed, this.speed);
-  }
-
-  update(){
     
-    this.position.add(this.velocity);
+    this.speed = s;
+    this.velocity = createVector(random(-1,1), random(-1,0));
+    this.acceleration = createVector(0,0.05);
+    this.position = position.copy();
 
+    
   }
 
   display (){
@@ -75,6 +73,18 @@ class sweatDrops {
 
 }
 
+  run(){
+    this.update();
+    this.display();
+    
+  }
+  update(){
+    
+    this.position.add(this.velocity);
+    this.velocity.add(this.acceleration);
+
+  }
+
   checkEdges(){ // Repositions sweatdrops
 
     if(this.position.x_ > width){
@@ -90,11 +100,6 @@ class sweatDrops {
     }else if(this.position.y_ < 0){
       this.position.y_ = height;
     }
-
-  }
-
-  move(){
-    
 
   }
 }

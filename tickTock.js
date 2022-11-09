@@ -15,7 +15,7 @@ let heart;
 var option = 1;
 
 function setup() {
-  createCanvas(1500,800);
+  createCanvas(1500,800); // Tried to use windowWidth, windowHeight but it seemed to always cut off my drawings
 
   sweat = new sweatDrops();
   heart = new heartBeat();
@@ -24,11 +24,10 @@ function setup() {
 
 function draw() {
 
-  if (millis () < 2000){
+
+  if (millis () < 10000){
     background(255);
-    sweat.display()
-    sweat.update();
-  }
+    sweat.run();
 
 
 
@@ -47,5 +46,5 @@ function keyPressed(){
     option--;
   }
   }
-
+}
   
