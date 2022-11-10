@@ -1,19 +1,20 @@
 class sweatDrops {
 
-  constructor(x,y,s,position){
+  constructor(x1,y1,x2,y2,s){
 
-    // Variables
-
-    this.x_ = x;
-    this.y_= y;
+    this.x1 = x1;
+    this.y1 = y1;
 
     // Movement Variables
-
     
-    this.speed = s;
-    this.velocity = createVector(random(-1,1), random(-1,0));
-    this.acceleration = createVector(0,0.05);
-    this.position = position.copy();
+    this.slowSpeed = 3;
+    this.mediumSpeed = 10;
+    this.highSpeed = 15;
+
+
+    // I was trying to use vectors as a way to move the heartbeat faster, but I was having trouble with it and it seemed like it wasn't working despite adding the position to the ellipse and such.
+    // this.velocity = createVector(random(-1,1), random(-1,0));
+    // this.acceleration = createVector(0,0.05)
 
     
   }
@@ -39,19 +40,23 @@ class sweatDrops {
     strokeWeight(4);
     ellipse (600,0,50,200);
 
-    // sweatdrop 
+    // sweatdrop 1
 
     fill (39,170, 226);
     noStroke();
-    ellipse (this.x_,this.y_,50,50)
-    triangle(this.x_-25,this.y_, this.x_-25,this.y_-50,this.x_+20,this.y_-15);
+    ellipse (this.x1,this.y1,50,50)
+    triangle(this.x1-25,this.y1, this.x1-25,this.y1-50,this.x1+20,this.y1-15);
     fill (255);
-    arc (this.x_,this.y_,15,25,0,PI+QUARTER_PI,PIE);
+    arc (this.x1,this.y1,15,25,0,PI+QUARTER_PI,PIE);
 
-    stroke(0);
-    strokeWeight(2);
-    vertex(600,200);
-    bezierVertex(700,180,750,200,780,180);
+    // sweatdrop 2
+
+    fill (39,170, 226);
+    noStroke();
+    ellipse (this.x2,this.y2,50,50)
+    triangle(this.x2-25,this.y2, this.x2-25,this.y2-50,this.x2+20,this.y2-15);
+    fill (255);
+    arc (this.x2,this.y2,15,25,0,PI+QUARTER_PI,PIE);
 
     // mouth 
 
@@ -71,34 +76,37 @@ class sweatDrops {
     curveVertex(825,300);
     endShape();
 
-}
+} 
 
-  run(){
-    this.update();
-    this.display();
-    
+  move(){
+    if (millis() / 1000 < 5){ // Moves the speed of the sweatdrop downward
+      this.y1 += this.slowSpeed;
+    }
+
+    else if (millis() / 1000 < 12){
+      this.y1 += this.mediumSpeed;
+    }
+
+    else if (millis() / 1000 < 22){
+      this.y1 += this.highSpeed;
+    }
+
   }
-  update(){
-    
-    this.position.add(this.velocity);
-    this.velocity.add(this.acceleration);
 
-  }
+  checkEdges(){ // Repositions sweatdrops so that it can reloop
 
-  checkEdges(){ // Repositions sweatdrops
+    if(this.x1 > width){
+      this.x1 = 0;
 
-    if(this.position.x_ > width){
-      this.position.x_ = 0;
-
-    }else if(this.position.x_ < 0){
-      this.position.x_ = width;
+    }else if(this.x1 < 0){
+      this.x1 = width;
 
     }
-    if(this.position.y_ > height){
-      this.position.y_ = 0;
+    if(this.y1 > height){
+      this.y1 = 0;
 
-    }else if(this.position.y_ < 0){
-      this.position.y_ = height;
+    }else if(this.y1 < 0){
+      this.y1 = height;
     }
 
   }
